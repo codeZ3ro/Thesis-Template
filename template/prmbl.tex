@@ -1,0 +1,123 @@
+% !TEX root = Hauptdokument.tex
+
+\usepackage[utf8]{inputenc}
+\usepackage[ngerman]{babel}
+\usepackage[left=2.5cm,right=5.5cm,top=4.5cm,bottom=2.4cm]{geometry}
+\usepackage[T1]{fontenc}
+
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\usepackage{graphicx}
+\usepackage{subfig} %Mehrere Bilder gemeinsame Unterschrift
+\usepackage{pgfplots}
+\usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
+\usetikzlibrary{arrows.meta}
+\pgfkeys{/pgf/number format/.cd ,use comma ,set thousands separator={.}} % Zahlen in pgfplots werden über die pgf Engine gesetzt. Siehe Doku zu pgfplotstable 
+\pgfplotsset{ every axis label/.append style={font=\scriptsize}, % 
+every tick label/.append style={font=\scriptsize}} % globale Einstellungen. 
+
+% nur eine Säule anzeigen
+\pgfplotsset{/pgfplots/ybar legend/.style={
+		/pgfplots/legend image code/.code={\draw[##1,/tikz/.cd,bar
+width=3pt,yshift=-0.2em,bar shift=0pt] plot coordinates {(0cm,0.8em)
+%hier geloescht (2*\pgfplotbarwidth,0.6em)
+};},
+	}}
+
+\usepackage{tikz}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{multirow} % Tabelle mit multi Zeile
+\usepackage{colortbl} % Tabellen einfärgen
+
+\usepackage{color} %inkscape
+\usepackage{transparent} %inkscape
+\usepackage{floatflt} %Textfluss um Bilder 
+\usepackage{float} %Textfluss um Bilder
+\usepackage{wrapfig} %Textfluss um Bilder
+\usepackage{epstopdf} %eps-Dateien verarbeiten
+\usepackage{pdflscape} %Seitenorientierung
+\usepackage{array} %Tabellenumgebung erweitern
+\usepackage{tabularx} % umfassendere Tabellen
+\usepackage{xcolor} %Farben definieren
+\usepackage{setspace} %Zeilenabstände
+\usepackage{acronym} %Abkürzungsverzeichnis, nur verwendete in Verzeichnis aufnehmen mit [printonlyused]
+\usepackage[per=slash,
+            decimalsymbol=comma,
+            loctolang={DE:ngerman,UK:english},
+            ]{siunitx} %SI-Einheiten richtig darstellen
+\usepackage{nicefrac} %Schräger Bruchstrich
+\sisetup{exponent-product = \cdot, output-product = \cdot} % \cdot anstelle x in wissenschaftl. Notation Siunitx Paket
+
+
+
+% Formelzeichenverzeichnis
+\newcommand{\acrounit}[1]{
+  \acroextra{\makebox[18mm][l]{\si{#1}}}
+}
+\usepackage{array}
+\usepackage{rotating}
+\usepackage{ragged2e}
+\newcolumntype{C}[1]{>{\centering}p{#1}} % neuer Spaltentyp Tabelle
+\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}} % Neue
+                                % Tabellenspalte: linksbündig mit
+                                % Breitenangabe
+
+\pgfplotsset{compat=newest}
+\usepgfplotslibrary{units}
+
+%\usepgfplotslibrary{external} 
+%\tikzexternalize[prefix=Plots/]
+\usepackage{pdfpages} %zb includepdf u. Seitenorientierung
+
+%%%%%%%%Schriftfarben%%%%%%%%%%%%%
+\definecolor{Weinrot}{RGB}{139,0,0}
+\definecolor{Weinrot2}{RGB}{178,34,34}
+\definecolor{Hellgruen}{RGB}{144,238,144}
+\definecolor{Limette}{RGB}{50,205,50}
+\definecolor{Blau1}{RGB}{95,158,160}
+\definecolor{Blau2}{RGB}{70,130,180}
+\definecolor{Blau3}{RGB}{30,144,255} 
+
+%HS-Esslingen Schriftfarben
+\definecolor{HSBlau1}{RGB}{0,70,102} %Überschriften
+\definecolor{HSBlau2}{RGB}{85,146,172} %Überschriften
+\definecolor{HSGrau1}{RGB}{236,242,245} 
+\definecolor{HSGrau2}{RGB}{245,248,249} %Hintergrund Abb.
+\definecolor{HSGrau3}{RGB}{112,113,114} %Aufzählungszeich.
+\definecolor{HSRot1}{RGB}{212,0,50} %Überschriften
+\definecolor{HSRot2}{RGB}{230,143,126} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%LAYOUT-EINSTELLUNGEN%%%%%%%%%%%
+
+% Zitationsstil
+\usepackage[style=authoryear,backend=biber,sorting=nyt]{biblatex}
+\addbibresource{Literatur.bib}
+
+%\addtokomafont{disposition}{\fontfamily{arial}} %Schriftart
+
+\setcounter{secnumdepth}{4} %Tiefe Kapitelnummerierung
+
+\setlength{\parindent}{0pt} %Einzug neuer Absatz
+
+% Abstand zur Kopfzeile einstellen
+\renewcommand{\chapterheadstartvskip}{\vspace{0cm}}
+
+%%%KOPF-FUSSZEILEN
+\fancypagestyle{plain} %Kopf u Fußzeilen auch auf Kapitelseiten
+
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{\includegraphics[trim= 0 0 0 0, clip,width=4cm]{HE-Logo.png}}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+

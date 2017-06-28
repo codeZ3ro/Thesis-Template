@@ -1,0 +1,38 @@
+\documentclass[10pt,a4paper,oneside]{scrreprt}
+
+\include{prmbl} 
+%\includeonly{} %compile only spefified docs
+\begin{document}
+
+
+\input{Deckblatt2}
+\onehalfspacing %spacing 1.5 
+%
+%\pagenumbering{Roman}
+\include{Sperrvermerk}
+\include{InhaltVZ}
+\include{Selbst}
+\include{Abkuerzungsverzeichnis}
+
+%\include{Formelzeichenverzeichnis}
+
+\include{AbbildungVZ}
+\include{TabellenVZ}
+%Start numbering with arabic numbers, only if you use
+%roman numbering before
+%\pagenumbering{arabic}
+
+
+\include{1_Einf}
+
+
+
+\printbibliography %Literaturverzeichnis einbinden
+\include{A_Deckblatt}
+%Anhang
+\begin{appendix}
+
+
+\end{appendix}
+
+\end{document}
