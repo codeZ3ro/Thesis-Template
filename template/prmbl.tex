@@ -1,4 +1,3 @@
-%Root document for merging
 % !TEX root = MainDoc.tex
 
 \usepackage[utf8]{inputenc}
@@ -9,108 +8,69 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
-
 \usepackage{graphicx}
-\usepackage{subfig} %Mehrere Bilder gemeinsame Unterschrift
+\usepackage{subfig} %supports subfigures
 \usepackage{pgfplots}
-\usetikzlibrary{calc,patterns,decorations.pathmorphing,decorations.markings}
-\usetikzlibrary{arrows.meta}
-\pgfkeys{/pgf/number format/.cd ,use comma ,set thousands separator={.}} % Zahlen in pgfplots werden über die pgf Engine gesetzt. Siehe Doku zu pgfplotstable 
-\pgfplotsset{ every axis label/.append style={font=\scriptsize}, % 
-every tick label/.append style={font=\scriptsize}} % globale Einstellungen. 
-
-% nur eine Säule anzeigen
-\pgfplotsset{/pgfplots/ybar legend/.style={
-		/pgfplots/legend image code/.code={\draw[##1,/tikz/.cd,bar
-width=3pt,yshift=-0.2em,bar shift=0pt] plot coordinates {(0cm,0.8em)
-%hier geloescht (2*\pgfplotbarwidth,0.6em)
-};},
-	}}
-
 \usepackage{tikz}
-
+%Change: no more fancy in future!
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage{multirow} % Tabelle mit multi Zeile
-\usepackage{colortbl} % Tabellen einfärgen
-
-\usepackage{color} %inkscape
-\usepackage{transparent} %inkscape
-\usepackage{floatflt} %Textfluss um Bilder 
-\usepackage{float} %Textfluss um Bilder
-\usepackage{wrapfig} %Textfluss um Bilder
-\usepackage{epstopdf} %eps-Dateien verarbeiten
-\usepackage{pdflscape} %Seitenorientierung
-\usepackage{array} %Tabellenumgebung erweitern
-\usepackage{tabularx} % umfassendere Tabellen
-\usepackage{xcolor} %Farben definieren
-\usepackage{setspace} %Zeilenabstände
-\usepackage{acronym} %Abkürzungsverzeichnis, nur verwendete in Verzeichnis aufnehmen mit [printonlyused]
+\usepackage{multirow} % supports multiple table rows
+\usepackage{colortbl} % color your tables
+\usepackage{color} 
+\usepackage{transparent} 
+\usepackage{floatflt} %wrap text around pics 
+\usepackage{float} %wrap text around pics
+\usepackage{wrapfig} %wrap text around pics
+\usepackage{epstopdf} %eps to pdf 
+\usepackage{pdflscape} 
+\usepackage{tabularx} 
+\usepackage{xcolor} 
+\usepackage{setspace} %line space
+\usepackage{acronym} %List of abbreviations. To print only used abbr. add parameter: [printonlyused]
 \usepackage[per=slash,
             decimalsymbol=comma,
             loctolang={DE:ngerman,UK:english},
-            ]{siunitx} %SI-Einheiten richtig darstellen
-\usepackage{nicefrac} %Schräger Bruchstrich
-\sisetup{exponent-product = \cdot, output-product = \cdot} % \cdot anstelle x in wissenschaftl. Notation Siunitx Paket
-
-
-
-% Formelzeichenverzeichnis
-\newcommand{\acrounit}[1]{
-  \acroextra{\makebox[18mm][l]{\si{#1}}}
-}
-\usepackage{array}
+            ]{siunitx} 
+\usepackage{nicefrac} %nice fraq
 \usepackage{rotating}
 \usepackage{ragged2e}
-\newcolumntype{C}[1]{>{\centering}p{#1}} % neuer Spaltentyp Tabelle
-\newcolumntype{L}[1]{>{\RaggedRight\arraybackslash}p{#1}} % Neue
-                                % Tabellenspalte: linksbündig mit
-                                % Breitenangabe
+\usepackage{pdfpages} 
+
+%%%Settings
+
+\pgfkeys{/pgf/number format/.cd ,use comma ,set thousands separator={.}} % thousands separator ="." instead of ","
+\pgfplotsset{ every axis label/.append style={font=\scriptsize}, % 
+every tick label/.append style={font=\scriptsize}} % global setting
+
+%print only one bar in bar chart
+\pgfplotsset{/pgfplots/ybar legend/.style={
+		/pgfplots/legend image code/.code={\draw[##1,/tikz/.cd,bar
+width=3pt,yshift=-0.2em,bar shift=0pt] plot coordinates {(0cm,0.8em)
+
+};},
+	}}
 
 \pgfplotsset{compat=newest}
 \usepgfplotslibrary{units}
 
-%\usepgfplotslibrary{external} 
-%\tikzexternalize[prefix=Plots/]
-\usepackage{pdfpages} %zb includepdf u. Seitenorientierung
+\sisetup{exponent-product = \cdot, output-product = \cdot} %dot insead of "x" for scientific annotation using siunitx
+%Style for list of formulas
+\newcommand{\acrounit}[1]{
+  \acroextra{\makebox[18mm][l]{\si{#1}}}
+}
 
-%%%%%%%%Schriftfarben%%%%%%%%%%%%%
-\definecolor{Weinrot}{RGB}{139,0,0}
-\definecolor{Weinrot2}{RGB}{178,34,34}
-\definecolor{Hellgruen}{RGB}{144,238,144}
-\definecolor{Limette}{RGB}{50,205,50}
-\definecolor{Blau1}{RGB}{95,158,160}
-\definecolor{Blau2}{RGB}{70,130,180}
-\definecolor{Blau3}{RGB}{30,144,255} 
 
-%HS-Esslingen Schriftfarben
-\definecolor{HSBlau1}{RGB}{0,70,102} %Überschriften
-\definecolor{HSBlau2}{RGB}{85,146,172} %Überschriften
-\definecolor{HSGrau1}{RGB}{236,242,245} 
-\definecolor{HSGrau2}{RGB}{245,248,249} %Hintergrund Abb.
-\definecolor{HSGrau3}{RGB}{112,113,114} %Aufzählungszeich.
-\definecolor{HSRot1}{RGB}{212,0,50} %Überschriften
-\definecolor{HSRot2}{RGB}{230,143,126} 
+\setcounter{secnumdepth}{4} %depth chapter numbering
+\setlength{\parindent}{0pt} %indent new paragraph
+%Change: no more fancy in future!
+\pagestyle{fancy}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%%%%%%%%%%LAYOUT-EINSTELLUNGEN%%%%%%%%%%%
-
-% Zitationsstil
-\usepackage[style=authoryear,backend=biber,sorting=nyt]{biblatex}
-\addbibresource{Literatur.bib}
-
-%\addtokomafont{disposition}{\fontfamily{arial}} %Schriftart
-
-\setcounter{secnumdepth}{4} %Tiefe Kapitelnummerierung
-
-\setlength{\parindent}{0pt} %Einzug neuer Absatz
-
-% Abstand zur Kopfzeile einstellen
+%%%Header and footer settings
+%Space to header
 \renewcommand{\chapterheadstartvskip}{\vspace{0cm}}
-
-%%%KOPF-FUSSZEILEN
-\fancypagestyle{plain} %Kopf u Fußzeilen auch auf Kapitelseiten
+%Will be changed: no more fancy in future!
+\fancypagestyle{plain} %print header and footer on all sites, chapter beginnings included
 
 \fancyhead[L]{}
 \fancyhead[C]{}
@@ -118,7 +78,11 @@ width=3pt,yshift=-0.2em,bar shift=0pt] plot coordinates {(0cm,0.8em)
 \fancyfoot[L]{}
 \fancyfoot[C]{}
 \fancyfoot[R]{\thepage}
-
+%lines on header and footer
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0.5pt}
 
+% Style of cite
+\usepackage[style=authoryear,backend=biber,sorting=nyt]{biblatex}
+%Add your bib file here
+%\addbibresource{literature.bib}
