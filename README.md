@@ -3,19 +3,21 @@ This template is basend on scrreprt from KOMA-Script. It suits perfect for creat
 
 The document has the following structure:
 
-|MainDoc.tex:
-|-prmbl.tex
-|-Titlepage.tex
-|-BlockingNotice.tex
-|-Acknowledgment.tex
-|-ListOfContent.tex
-|-StatementOfAuthorship.tex
-|-ListOfFigures.tex
-|-ListOfTables.tex
-|-1_Introduction.tex
-|-2_SecondChapter.tex
-|-Appendix
-|-Optional: ListOfFormulas.tex
+MainDoc.tex:
+-prmbl.tex
+-Titlepage.tex
+-BlockingNotice.tex
+-Acknowledgment.tex
+-ListOfContent.tex
+-StatementOfAuthorship.tex
+-ListOfFigures.tex
+-ListOfTables.tex
+-1_Introduction.tex
+-2_SecondChapter.tex
+-Appendix
+-Optional: ListOfFormulas.tex
+
+I used MikTeX 2.9 to create the template. 
 
 ## How to use:
 I like to use separate files for each chapter. So Introduction will be written file 1_Indroduction.tex, second chapter in 2_SecondChapter.tex and so on.  
