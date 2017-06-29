@@ -1,5 +1,7 @@
 # Thesis Template
-This template is basend on scrreprt from KOMA-Script. The document has the following structure:
+This template is basend on scrreprt from KOMA-Script. It suits perfect for creating a bachelor or master thesis. 
+
+The document has the following structure:
 
 |MainDoc.tex:
 |-prmbl.tex
@@ -19,10 +21,16 @@ This template is basend on scrreprt from KOMA-Script. The document has the follo
 I like to use separate files for each chapter. So Introduction will be written file 1_Indroduction.tex, second chapter in 2_SecondChapter.tex and so on.  
 
 
+## To be done:
+- remove fancy pagestyle
+
+## Changelog
+
 
 ## Donate:
 If you like consider to buy me a coffee 
 [![Donate](https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donate_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=EYTWNLMPEAFMQ)
+
 Thank you 
 
 
